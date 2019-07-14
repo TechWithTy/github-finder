@@ -11,6 +11,7 @@ export default class App extends Component {
   };
 
   async componentDidMount() {
+    console.log(process.env.REACT_APP_GITHUB_CLIENT_SECRET);
     this.setState({ loading: true });
     const res = await axios.get(
       `https://api.github.com/users?cliend_id=${

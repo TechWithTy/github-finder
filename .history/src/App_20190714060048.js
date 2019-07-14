@@ -11,11 +11,12 @@ export default class App extends Component {
   };
 
   async componentDidMount() {
+    console.log(process.env.REACT_APP_GITHUB_CLIENT_ID);
     this.setState({ loading: true });
     const res = await axios.get(
       `https://api.github.com/users?cliend_id=${
-        process.env.REACT_APP_GITHUB_CLIENT_ID
-      }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+        process.env.React_APP_GITHUB_CLIENT_ID
+      }&CLIENT_SECRET=${process.env.React_APP_GITHUB_CLIENT_SECRET}`
     );
     this.setState({ users: res.data, loading: false });
   }

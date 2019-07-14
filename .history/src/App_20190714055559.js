@@ -12,14 +12,11 @@ export default class App extends Component {
 
   async componentDidMount() {
     this.setState({ loading: true });
-    const res = await axios.get(
-      `https://api.github.com/users?cliend_id=${
-        process.env.REACT_APP_GITHUB_CLIENT_ID
-      }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-    );
+    const res = await axios.get('https://api.github.com/users?cliend_id=${process.env.}');
     this.setState({ users: res.data, loading: false });
   }
   render() {
+   
     return (
       <div className="App">
         <Navbar style1="fab fa-github" />
